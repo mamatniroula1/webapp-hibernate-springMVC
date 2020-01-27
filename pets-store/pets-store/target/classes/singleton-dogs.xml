@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+   <!--
+     Dog dog=new Dog();//Who  is creating instance of Dog ? P
+        dog.setAge(12); //Who  is setting initial states of the object ? P
+        dog.setColor("Yellow");
+        dog.setName("Paul!!!");
+   -->
+ <bean id="dog" class="com.model.Dog" scope="singleton">
+     <property name="age" value="12"/>
+     <property name="color" value="Yellow"/>
+    <property name="name" value="Paul!!!"/>
+     <property name="anything" ref="meala"/>
+ </bean>
+
+    <bean id="meala" class="com.model.Meal" scope="singleton">
+        <property name="milk" value="10"/>
+        <property name="meat" value="2 Kg"/>
+    </bean>
+
+</beans>
